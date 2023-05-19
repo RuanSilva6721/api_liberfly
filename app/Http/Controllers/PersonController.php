@@ -31,7 +31,7 @@ class PersonController extends Controller
      * @param mixed $id
      * @return mixed
      */
-    public function gerPersonOne($id)
+    public function getPersonOne($id)
     {
         try {
             return $this->personService->getPersonOne($id);
