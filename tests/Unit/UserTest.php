@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
-use App\Http\Controllers\PersonController;
-use App\Models\Person;
+use App\Http\Controllers\UserController;
+use App\Models\User;
 use PHPUnit\Framework\TestCase;
 
 class PersonTest extends TestCase
@@ -15,9 +15,9 @@ class PersonTest extends TestCase
     {
         $this->assertTrue(true);
     }
-    public function testBuscarTodosUsuarios(PersonController $people)
+    public function testBuscarTodosUsuarios(UserController $people)
     {
-        $users = Person::factory()->count(3)->create();
+        $users = User::factory()->count(3)->create();
 
         $foundUsers = $people->getPersonAll();
 
@@ -29,9 +29,9 @@ class PersonTest extends TestCase
             // Adicione aqui as outras propriedades do usuário que você deseja verificar
         }
     }
-    public function testBuscarUsuario(PersonController $people)
+    public function testBuscarUsuario(UserController $people)
     {
-        $user = Person::factory()->create();
+        $user = User::factory()->create();
 
         $foundUser = $people->getPersonOne($user->id);
 
