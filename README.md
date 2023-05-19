@@ -104,6 +104,8 @@ Caso queria fazer o testes unitários:
 php artisan test
 ```
 **Autenticação com JWT:**
+
+
 Gere uma nova chave da aplicação:
 
 ```bash
@@ -119,11 +121,13 @@ acesse as rotas o token buscado anteriomente
 ```bash
 http://localhost:8083/api/users
 ```
+![todosUsers](./imgReadme/todos_users.png)
 buscar todos os usuários
 
 ```bash
 http://localhost:8083/api/id
 ```
+![todosUsers](./imgReadme/um_user.png)
 buscar um usuário especifico 
 
 ## Construído com
