@@ -138,6 +138,13 @@ http://localhost:8083/api/logout
 ![todosUsers](./imgReadme/logout.png)
 fazer logout
 
+ver a documentação
+
+```bash
+http://localhost:8083/api/documentation
+```
+ver a documentação
+
 ## Construído com
 
 * [Laravel](https://laravel.com/)
