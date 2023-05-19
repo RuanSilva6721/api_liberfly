@@ -130,6 +130,14 @@ http://localhost:8083/api/id
 ![todosUsers](./imgReadme/um_user.png)
 buscar um usuário especifico 
 
+fazer logout
+
+```bash
+http://localhost:8083/api/logout
+```
+![todosUsers](./imgReadme/logout.png)
+fazer logout
+
 ## Construído com
 
 * [Laravel](https://laravel.com/)
