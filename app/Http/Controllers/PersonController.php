@@ -12,6 +12,10 @@ class PersonController extends Controller
         $this->personService = $personService;
     }
 
+    /**
+     * Summary of getPersonAll
+     * @return mixed
+     */
     public function getPersonAll()
     {
         try {
@@ -22,6 +26,11 @@ class PersonController extends Controller
         
     }
 
+    /**
+     * Summary of gerPersonOne
+     * @param mixed $id
+     * @return mixed
+     */
     public function gerPersonOne($id)
     {
         try {

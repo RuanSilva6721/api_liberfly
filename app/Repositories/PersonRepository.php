@@ -9,9 +9,10 @@ class PersonRepository
 {
     public function getPersonAll()
     {
-        return  DB::transaction(function () {
-            return Person::all();
-         });
+        return "aqui";
+        // return  DB::transaction(function () {
+        //     return Person::all();
+        //  });
     }
     public function getPersonOne($id)
     {
