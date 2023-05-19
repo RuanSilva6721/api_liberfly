@@ -2,65 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Person;
-use App\Http\Requests\StorePersonRequest;
-use App\Http\Requests\UpdatePersonRequest;
+use App\Services\PersonService;
+use Exception;
 
 class PersonController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    private $personService;
+    public function __construct(PersonService $personService){
+        $this->personService = $personService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function getPersonAll()
     {
-        //
+        try {
+            return $this->personService->getPersonAll();
+        } catch (Exception $e) {
+            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        }
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StorePersonRequest $request)
+    public function gerPersonOne($id)
     {
-        //
+        try {
+            return $this->personService->getPersonOne($id);
+        } catch (Exception $e) {
+            echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Person $person)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Person $person)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePersonRequest $request, Person $person)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Person $person)
-    {
-        //
-    }
 }
