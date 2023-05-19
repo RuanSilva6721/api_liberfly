@@ -1,22 +1,22 @@
 <?php
 namespace App\Repositories;
 
-use App\Models\Person;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 
-class PersonRepository
+class UserRepository
 {
     public function getPersonAll()
     {
         return  DB::transaction(function () {
-            return Person::all();
+            return User::all();
          });
     }
     public function getPersonOne($id)
     {
         return  DB::transaction(function () use($id) {
-            return Person::find($id);
+            return User::find($id);
          });
     }
 }

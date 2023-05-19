@@ -47,7 +47,7 @@ Para ver o projeto em execução acesse seu [http://localhost:8000](http://local
 
 Caso queira dados fictícios para o seu usuário no banco:
 ```bash
-php artisan db:seed --class=PersonSeeder
+php artisan db:seed --class=UserSeeder
 ```
 Caso queria fazer o testes unitários:
 
@@ -96,13 +96,20 @@ php artisan migrate
 
 Caso queira dados fictícios para o seu usuário no banco:
 ```bash
-php artisan db:seed --class=PersonSeeder
+php artisan db:seed --class=UserSeeder
 ```
 Caso queria fazer o testes unitários:
 
 ```bash
 php artisan test
 ```
+**Autenticação com JWT:**
+Gere uma nova chave da aplicação:
+
+```bash
+php artisan jwt:secret
+```
+
 
 ## Construído com
 

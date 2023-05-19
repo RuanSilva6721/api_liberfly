@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\PersonService;
+use App\Services\UserService;
 use Exception;
 
-class PersonController extends Controller
+class UserController extends Controller
 {
-    private $personService;
-    public function __construct(PersonService $personService){
-        $this->personService = $personService;
+    private $userService;
+    public function __construct(UserService $userService){
+        $this->userService = $userService;
     }
 
     /**
@@ -19,11 +19,11 @@ class PersonController extends Controller
     public function getPersonAll()
     {
         try {
-            return $this->personService->getPersonAll();
+            return $this->userService->getPersonAll();
         } catch (Exception $e) {
             echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         }
-        
+
     }
 
     /**
@@ -34,7 +34,7 @@ class PersonController extends Controller
     public function getPersonOne($id)
     {
         try {
-            return $this->personService->getPersonOne($id);
+            return $this->userService->getPersonOne($id);
         } catch (Exception $e) {
             echo 'Exceção capturada: ',  $e->getMessage(), "\n";
         }
