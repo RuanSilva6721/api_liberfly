@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 Route::post('/login',[AuthController::class, 'login']);
-Route::get('/person', [UserController::class, 'getPersonAll']);
-Route::get('/person/{id}', [UserController::class, 'getPersonOne']);
+Route::group(['middleware' => ['apiJwt']], function () {
+    Route::get('/users', [UserController::class, 'getPersonAll']);
+    Route::get('/users/{id}', [UserController::class, 'getPersonOne']);
+});
+
+

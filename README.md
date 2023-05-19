@@ -109,7 +109,22 @@ Gere uma nova chave da aplicação:
 ```bash
 php artisan jwt:secret
 ```
+acesse a rota passando o email e password como parâmetro para ter acesso ao token para poder acessar as rotas privadas
+```bash
+http://localhost:8083/api/login
+```
+![Login](./imgReadme/logiinJWT.png)
+acesse as rotas o token buscado anteriomente
 
+```bash
+http://localhost:8083/api/users
+```
+buscar todos os usuários
+
+```bash
+http://localhost:8083/api/id
+```
+buscar um usuário especifico 
 
 ## Construído com
 
