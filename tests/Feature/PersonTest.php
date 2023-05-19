@@ -18,11 +18,11 @@ class PersonTest extends TestCase
 
         $response->assertStatus(200);
     }
-    public function testBuscarUsuario()
+    public function test_get_one_person()
     {
         $user = Person::factory()->create();
 
-        $response = $this->get('/users/' . $user->id);
+        $response = $this->get('/api/person/' . $user->id);
 
         $response->assertStatus(200);
         $response->assertJson([
@@ -31,11 +31,11 @@ class PersonTest extends TestCase
             // Adicione aqui as outras propriedades do usuário que você deseja verificar
         ]);
     }
-    public function testBuscarTodosUsuarios()
+    public function test_get_people_all()
     {
         $users = Person::factory()->count(3)->create();
 
-        $response = $this->get('/users');
+        $response = $this->get('/api/person');
 
         $response->assertStatus(200);
         foreach ($users as $user) {
